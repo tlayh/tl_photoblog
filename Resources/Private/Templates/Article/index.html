@@ -1,0 +1,17 @@
+<f:layout name="default" />
+
+This Template is responsible for creating a table of domain objects.
+
+<f:section name="main">
+
+<f:flashMessages />
+
+<div class="photoblog-list">
+	<f:for each="{articles}" as="article">
+		<f:link.action action="show" arguments="{article : article}">
+			<f:image src="uploads/tx_tlphotoblog/{article.smallimage}" alt="{article.name}" width="180" height="150" />
+		</f:link.action>
+	</f:for>
+</div>
+
+</f:section>

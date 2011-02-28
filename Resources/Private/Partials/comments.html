@@ -1,0 +1,11 @@
+{namespace tl=Tx_TlPhotoblog_ViewHelpers}
+
+<h3>Recent comments:</h3>
+
+	<f:for each="{comments}" as="comment">
+		<span class="comment-date"><f:format.date format="d-m-Y - H:i">{comment.crdate}</f:format.date></span><br />
+		{comment.name}<br />
+		<tl:linkvalidator value="{comment.website}" /><br />
+		{comment.comment}<br />
+		<hr />
+	</f:for>

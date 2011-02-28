@@ -1,0 +1,37 @@
+plugin.tx_tlphotoblog.settings {
+}
+
+plugin.tx_tlphotoblog._CSS_DEFAULT_STYLE (
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-tlphotoblog-pi1 ul.flashMessages {
+		color:#FF0000;
+	}
+
+	.tx-tlphotoblog-pi1 span.comment-date {
+		color:#C0C0C0;
+		font-size: 13px;
+	}
+
+	.tx-tlphotoblog-pi1 div.content img {
+		margin-right:8px;
+	}
+
+	.tx-tlphotoblog-pi1 div.comment-form label {
+		width:100px;
+		float:left;
+		display:block;
+	}
+
+	.tx-tlphotoblog-pi1 div.comment-form br {
+		clear:both;
+	}
+)

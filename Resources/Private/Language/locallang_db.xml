@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'tl_photoblog'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_tlphotoblog_domain_model_category">Category</label>
+			<label index="tx_tlphotoblog_domain_model_category.name">Name</label>
+			<label index="tx_tlphotoblog_domain_model_category.description">Description</label>
+			<label index="tx_tlphotoblog_domain_model_article">Article</label>
+			<label index="tx_tlphotoblog_domain_model_article.title">Title</label>
+			<label index="tx_tlphotoblog_domain_model_article.smallimage">Smallimage</label>
+			<label index="tx_tlphotoblog_domain_model_article.image">Image</label>
+			<label index="tx_tlphotoblog_domain_model_article.text">Text</label>
+			<label index="tx_tlphotoblog_domain_model_article.category">Category</label>
+			<label index="tx_tlphotoblog_domain_model_article.comments">Comments</label>
+			<label index="tx_tlphotoblog_domain_model_article.tags">Tags</label>
+			<label index="tx_tlphotoblog_domain_model_article.galleryimage">Galleryimage</label>
+			<label index="tx_tlphotoblog_domain_model_comment">Comment</label>
+			<label index="tx_tlphotoblog_domain_model_comment.name">Name</label>
+			<label index="tx_tlphotoblog_domain_model_comment.email">Email</label>
+			<label index="tx_tlphotoblog_domain_model_comment.website">Website</label>
+			<label index="tx_tlphotoblog_domain_model_comment.comment">Comment</label>
+			<label index="tx_tlphotoblog_domain_model_tag">Tag</label>
+			<label index="tx_tlphotoblog_domain_model_tag.name">Name</label>
+			<label index="tx_tlphotoblog_domain_model_galleryimage">Galleryimage</label>
+			<label index="tx_tlphotoblog_domain_model_galleryimage.name">Name</label>
+			<label index="tx_tlphotoblog_domain_model_galleryimage.image">Image</label>
+		</languageKey>
+	</data>
+</T3locallang>

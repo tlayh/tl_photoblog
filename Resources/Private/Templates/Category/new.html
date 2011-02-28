@@ -1,0 +1,19 @@
+<f:layout name="default" />
+
+This template displays a NEW form for the current domain object.
+
+<f:section name="main">
+<h1>New Category</h1>
+
+<f:flashMessages />
+
+<f:render partial="formErrors" />
+
+<f:form method="post" action="create" name="newCategory" object="{newCategory}">
+	<label for="title"><f:translate key="tx_tlphotoblog_domain_model_category.name" /></label><br />
+	<f:form.textbox property="name" /><br />
+	<label for="title"><f:translate key="tx_tlphotoblog_domain_model_category.description" /></label><br />
+	<f:form.textbox property="description" /><br />
+	<f:form.submit value="Create new" />
+</f:form>
+</f:section>

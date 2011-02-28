@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the Photoblog extension in the FRONTEND</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_tlphotoblog_domain_model_category">Category</label>
+			<label index="tx_tlphotoblog_domain_model_category.name">name</label>
+			<label index="tx_tlphotoblog_domain_model_category.description">description</label>
+			<label index="tx_tlphotoblog_domain_model_article">Article</label>
+			<label index="tx_tlphotoblog_domain_model_article.title">title</label>
+			<label index="tx_tlphotoblog_domain_model_article.smallimage">smallimage</label>
+			<label index="tx_tlphotoblog_domain_model_article.image">image</label>
+			<label index="tx_tlphotoblog_domain_model_article.text">text</label>
+			<label index="tx_tlphotoblog_domain_model_article.category">category</label>
+			<label index="tx_tlphotoblog_domain_model_article.comments">comments</label>
+			<label index="tx_tlphotoblog_domain_model_article.tags">tags</label>
+			<label index="tx_tlphotoblog_domain_model_article.galleryimage">galleryimage</label>
+			<label index="tx_tlphotoblog_domain_model_comment">Comment</label>
+			<label index="tx_tlphotoblog_domain_model_comment.name">name</label>
+			<label index="tx_tlphotoblog_domain_model_comment.email">email</label>
+			<label index="tx_tlphotoblog_domain_model_comment.website">website</label>
+			<label index="tx_tlphotoblog_domain_model_comment.comment">comment</label>
+			<label index="tx_tlphotoblog_domain_model_tag">Tag</label>
+			<label index="tx_tlphotoblog_domain_model_tag.name">name</label>
+			<label index="tx_tlphotoblog_domain_model_galleryimage">Galleryimage</label>
+			<label index="tx_tlphotoblog_domain_model_galleryimage.name">name</label>
+			<label index="tx_tlphotoblog_domain_model_galleryimage.image">image</label>
+		</languageKey>
+	</data>
+</T3locallang>

@@ -1,0 +1,36 @@
+<h3>Add your comment</h3>
+<a href="#" onclick="showCommentForm(); return false;">Show comment form</a>
+<br />
+<br />
+
+<div class="comment-form" style="display:none;">
+	<f:form action="comment" controller="Comment" name="comment" object="{comment}" >
+		<f:form.hidden name="article" value="{article}" />
+		
+		<p class="row">
+			<label>Name: *</label><f:form.textbox property="name" name="name" />
+		</p>
+
+		<p class="row">
+			<label>Email: *</label><f:form.textbox property="email" name="email" />
+			<span class="hint">Will not be published!!</span>
+		</p>
+
+		<p class="row">
+			<label>Website:</label><f:form.textbox property="website" name="website" />
+		</p>
+
+		<p class="row">
+			<label>Comment: *</label><br />
+			<f:form.textarea rows="6" cols="60" property="comment" name="comment" />
+		</p>
+		
+		<p class="row">
+			<f:form.submit name="commentSubmit" value="Submit comment" />
+		</p>
+
+		<p class="row">
+			Fields marked with a * are required to publish your comment.
+		</p>
+	</f:form>
+</div>

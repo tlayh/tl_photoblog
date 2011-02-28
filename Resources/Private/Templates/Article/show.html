@@ -1,0 +1,35 @@
+{namespace tl=Tx_TlPhotoblog_ViewHelpers}
+
+<f:layout name="default" />
+
+This Template is responsible for creating a single view for a domain object
+
+<f:section name="main">
+
+	<h1>{article.title}</h1>
+
+	<div class="content">
+
+		<f:image src="uploads/tx_tlphotoblog/{article.smallimage}" alt="{article.name}" />
+
+		<f:format.html>{article.text}</f:format.html>
+
+	</div>
+
+	<hr style="clear:both; margin-top:20px;" />
+
+	<div class="gallery">
+		<f:for each="{article.galleryimage}" as="gallery">
+			<h3>{gallery.name}</h3>
+			<tl:gallery value="{gallery.image}" />
+		</f:for>
+	</div>
+
+	<f:flashMessages class="flashMessages" />
+
+	<f:render partial="newComment" arguments="{article : article, comments:comment}" />
+
+	<f:render partial="comments" arguments="{comments: article.comments}" />
+
+	<f:link.action action="index">Back to listing</f:link.action>
+</f:section>
