@@ -1,3 +1,8 @@
+# add js file
+page.includeJS {
+	photoblog = typo3conf/ext/tl_photoblog/Resources/Public/Js/photoblog.js
+}
+
 plugin.tx_tlphotoblog.settings {
 }
 
@@ -33,5 +38,14 @@ plugin.tx_tlphotoblog._CSS_DEFAULT_STYLE (
 
 	.tx-tlphotoblog-pi1 div.comment-form br {
 		clear:both;
+	}
+
+	.tx-tlphotoblog-pi1 div.photoblog-list ul {
+		list-style:none;
+	}
+
+	.tx-tlphotoblog-pi1 div.photoblog-list ul li {
+		float:left;
+		 width: 205px;
 	}
 )
