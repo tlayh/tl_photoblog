@@ -6,11 +6,13 @@ This Template is responsible for creating a single view for a domain object
 
 <f:section name="main">
 
+	<f:link.action action="index">&lt;&lt; Back to listing</f:link.action>
+
 	<h1>{article.title}</h1>
 
 	<div class="content">
 
-		<f:image src="uploads/tx_tlphotoblog/{article.smallimage}" alt="{article.name}" />
+		<f:image src="uploads/tx_tlphotoblog/{article.image}" alt="{article.name}" maxWidth="600" />
 
 		<f:format.html>{article.text}</f:format.html>
 
@@ -31,5 +33,5 @@ This Template is responsible for creating a single view for a domain object
 
 	<f:render partial="comments" arguments="{comments: article.comments}" />
 
-	<f:link.action action="index">Back to listing</f:link.action>
+	<f:link.action action="index">&lt;&lt; Back to listing</f:link.action>
 </f:section>
