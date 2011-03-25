@@ -1,8 +1,12 @@
 // activate jquery plugin for gallery images
-$(document).ready( function () {
-	$('div.tx-tlphotoblog-pi1 div.gallery a').lightBox();
+jQuery(document).ready( function () {
+	if(jQuery('div.tx-tlphotoblog-pi1 div.gallery a')) {
+		jQuery('div.tx-tlphotoblog-pi1 div.gallery a').lightBox();
+	}
 });
 
 function showCommentForm() {
-	$('div.comment-form').toggle(500);
+	if(jQuery('div.comment-form')) {
+		jQuery('div.comment-form').toggle(500);
+	}
 }
