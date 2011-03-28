@@ -27,9 +27,9 @@ This Template is responsible for creating a single view for a domain object
 		<ul>
 			<f:for each="{category}" as="art">
 				<li>
-					<f:link.action action="show" arguments="{art : article}">
+					<f:link.action action="show" arguments="{article : art}">
 						<f:image src="uploads/tx_tlphotoblog/{art.smallimage}" alt="{art.name}" width="180"
-								 height="150"/>
+								 height="150" class="reflect ropacity30 rheight20" />
 					</f:link.action>
 				</li>
 			</f:for>
