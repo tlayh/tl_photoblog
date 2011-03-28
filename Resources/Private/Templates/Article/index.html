@@ -6,12 +6,14 @@ This Template is responsible for creating a table of domain objects.
 
 <f:flashMessages />
 
+<f:form.select options="{categories}" optionLabelField="name" optionValueField="uid" />
+
 <div class="photoblog-list">
 	<ul>
 	<f:for each="{articles}" as="article">
 		<li>
 		<f:link.action action="show" arguments="{article : article}">
-			<f:image src="uploads/tx_tlphotoblog/{article.smallimage}" alt="{article.name}" width="180" height="150" />
+			<f:image src="uploads/tx_tlphotoblog/{article.smallimage}" alt="{article.name}" width="180" height="150" class="reflect rheight30 ropacity40" />
 		</f:link.action>
 		</li>
 	</f:for>

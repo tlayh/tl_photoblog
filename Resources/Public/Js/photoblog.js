@@ -1,7 +1,7 @@
 // activate jquery plugin for gallery images
 jQuery(document).ready( function () {
-	if(jQuery('div.tx-tlphotoblog-pi1 div.gallery a')) {
-		jQuery('div.tx-tlphotoblog-pi1 div.gallery a').lightBox();
+	if(jQuery('div.tx-tlphotoblog-pi1 div.content a')) {
+		jQuery('div.tx-tlphotoblog-pi1 div.content a').lightBox();
 	}
 });
 

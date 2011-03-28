@@ -40,11 +40,18 @@ class Tx_TlPhotoblog_Controller_ArticleController extends Tx_Extbase_MVC_Control
 	 */
 	protected $articleRepository;
 
+	/**
+	 * @var Tx_TlPhotoblog_Domain_Repository_CategoryRepository
+	 */
+	protected $categoryRepository;
+
 	protected function initializeAction() {
 		$this->articleRepository = t3lib_div::makeInstance('Tx_TlPhotoblog_Domain_Repository_ArticleRepository');
+		$this->categoryRepository = t3lib_div::makeInstance('Tx_TlPhotoblog_Domain_Repository_CategoryRepository');
 	}
 
 	public function indexAction() {
+		$this->view->assign('categories', $this->categoryRepository->findAll());
 		$this->view->assign('articles', $this->articleRepository->findAll());
 	}
 
@@ -55,6 +62,9 @@ class Tx_TlPhotoblog_Controller_ArticleController extends Tx_Extbase_MVC_Control
 	 */
 	public function showAction(Tx_TlPhotoblog_Domain_Model_Article $article, Tx_TlPhotoblog_Domain_Model_Comment $comment = NULL) {
 		$this->view->assign('article', $article);
+
+		$this->view->assign('category', $this->articleRepository->findByCategory($article->getCategory()));
+		
 		$this->view->assign('comment', $comment);
 	}
 

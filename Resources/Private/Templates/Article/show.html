@@ -1,6 +1,6 @@
 {namespace tl=Tx_TlPhotoblog_ViewHelpers}
 
-<f:layout name="default" />
+<f:layout name="default"/>
 
 This Template is responsible for creating a single view for a domain object
 
@@ -12,26 +12,35 @@ This Template is responsible for creating a single view for a domain object
 
 	<div class="content">
 
-		<f:image src="uploads/tx_tlphotoblog/{article.image}" alt="{article.name}" maxWidth="600" />
+		<a href="uploads/tx_tlphotoblog/{article.image}">
+			<f:image src="uploads/tx_tlphotoblog/{article.image}" alt="{article.name}" maxWidth="400" class="reflect ropacity30 rheight20" />
+		</a>
 
 		<f:format.html>{article.text}</f:format.html>
 
 	</div>
 
-	<hr style="clear:both; margin-top:20px;" />
+	<br style="clear:both;" />
+	<hr style="clear:both; margin-top:20px;"/>
 
-	<div class="gallery">
-		<f:for each="{article.galleryimage}" as="gallery">
-			<h3>{gallery.name}</h3>
-			<tl:gallery value="{gallery.image}" />
-		</f:for>
+	<div class="photoblog-list">
+		<ul>
+			<f:for each="{category}" as="art">
+				<li>
+					<f:link.action action="show" arguments="{art : article}">
+						<f:image src="uploads/tx_tlphotoblog/{art.smallimage}" alt="{art.name}" width="180"
+								 height="150"/>
+					</f:link.action>
+				</li>
+			</f:for>
+		</ul>
 	</div>
 
-	<f:flashMessages class="flashMessages" />
+	<f:flashMessages class="flashMessages"/>
 
-	<f:render partial="newComment" arguments="{article : article, comments:comment}" />
+	<f:render partial="newComment" arguments="{article : article, comments:comment}"/>
 
-	<f:render partial="comments" arguments="{comments: article.comments}" />
+	<f:render partial="comments" arguments="{comments: article.comments}"/>
 
 	<f:link.action action="index">&lt;&lt; Back to listing</f:link.action>
 </f:section>
