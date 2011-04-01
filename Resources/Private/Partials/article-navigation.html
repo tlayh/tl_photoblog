@@ -1,0 +1,23 @@
+<div class="article-navigation">
+	<f:if condition="{previous}">
+		<f:link.action action="show" arguments="{article : previous}">
+				<span class="previous-link">
+					<button>Previous</button>
+				</span>
+		</f:link.action>
+	</f:if>
+
+	<f:link.action action="index">
+			<span class="back-link">
+				<button>&Uuml;bersicht</button>
+			</span>
+	</f:link.action>
+
+	<f:if condition="{next}">
+		<f:link.action action="show" arguments="{article : next}">
+				<span class="next-link">
+					<button>Next</button>
+				</span>
+		</f:link.action>
+	</f:if>
+</div>
