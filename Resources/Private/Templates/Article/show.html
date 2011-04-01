@@ -6,7 +6,8 @@ This Template is responsible for creating a single view for a domain object
 
 <f:section name="main">
 
-	<f:link.action action="index">&lt;&lt; Back to listing</f:link.action>
+	<f:render partial="article-navigation" arguments="{next:next, previous:previous}" />
+
 
 	<h1>{article.title}</h1>
 
@@ -21,9 +22,13 @@ This Template is responsible for creating a single view for a domain object
 	</div>
 
 	<br style="clear:both;" />
-	<hr style="clear:both; margin-top:20px;"/>
+
+	<f:render partial="article-navigation" arguments="{next:next, previous:previous}" />
+
+	<br style="clear:both; margin-top:20px;"/>
 
 	<div class="photoblog-list">
+		<h2>Zufallsbilder aus der Kategorie:</h2>
 		<ul>
 			<f:for each="{category}" as="art">
 				<li>

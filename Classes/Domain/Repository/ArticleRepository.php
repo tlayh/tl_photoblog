@@ -68,6 +68,32 @@ class Tx_TlPhotoblog_Domain_Repository_ArticleRepository extends Tx_Extbase_Pers
 		return $randResult;
 	}
 
+	/**
+	 * find the previous post
+	 *
+	 * @param Tx_TlPhotoblog_Domain_Model_Article $article
+	 * @return Tx_TlPhotoblog_Domain_Model_Article
+	 */
+	public function findPrevious(Tx_TlPhotoblog_Domain_Model_Article $article) {
+		$query = $this->createQuery();
+		$query->matching ($query->lessThan('uid', $article->getUid()));
+		$query->setOrderings(array('uid' => Tx_Extbase_Persistence_QueryInterface::ORDER_DESCENDING));
+		return $query->execute()->getFirst();
+	}
+
+	/**
+	 * find the next post
+	 *
+	 * @param Tx_TlPhotoblog_Domain_Model_Article $article
+	 * @return Tx_TlPhotoblog_Domain_Model_Article
+	 */
+	public function findNext(Tx_TlPhotoblog_Domain_Model_Article $article) {
+		$query = $this->createQuery();
+		$query->matching ($query->greaterThan('uid', $article->getUid()));
+		$query->setOrderings(array('uid' => Tx_Extbase_Persistence_QueryInterface::ORDER_ASCENDING));
+		return $query->execute()->getFirst();
+	}
+
 
 }
 ?>

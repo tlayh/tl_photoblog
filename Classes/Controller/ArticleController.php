@@ -84,6 +84,8 @@ class Tx_TlPhotoblog_Controller_ArticleController extends Tx_Extbase_MVC_Control
 	 */
 	public function showAction(Tx_TlPhotoblog_Domain_Model_Article $article, Tx_TlPhotoblog_Domain_Model_Comment $comment = NULL) {
 		$this->view->assign('article', $article);
+		$this->view->assign('next', $this->articleRepository->findNext($article));
+		$this->view->assign('previous', $this->articleRepository->findPrevious($article));
 		$this->view->assign('category', $this->articleRepository->findByCategories($article->getCategory(), $article));
 		$this->view->assign('comment', $comment);
 	}
