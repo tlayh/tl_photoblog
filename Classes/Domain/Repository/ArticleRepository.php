@@ -31,5 +31,43 @@
  */
 class Tx_TlPhotoblog_Domain_Repository_ArticleRepository extends Tx_Extbase_Persistence_Repository {
 
+	/**
+	 * @param Tx_TlPhotoblog_Domain_Model_Category $category
+	 * @return query result
+	 */
+	public function findByCategory(Tx_TlPhotoblog_Domain_Model_Category $category) {
+		$query = $this->createQuery();
+		$query->matching($query->contains('category', $category));
+		return $query->execute();
+	}
+
+	/**
+	 * @param Tx_Extbase_Persistence_ObjectStorage $categories
+	 * @return query result
+	 */
+	public function findByCategories(Tx_Extbase_Persistence_ObjectStorage $categories, Tx_TlPhotoblog_Domain_Model_Article $currentArticle) {
+		$query = $this->createQuery();
+		foreach($categories as $cat) {
+			$query->matching($query->contains('category', $cat));
+		}
+
+		$result = $query->execute()->toArray();
+
+		$max = 3;
+		$count = count($result);
+
+		if($count > $max) {
+			$resultKeys = array_rand($result, $max);
+			foreach($resultKeys as $key) {
+				$randResult[] = $result[$key];
+			}
+		} else {
+			$randResult = $result;
+		}
+
+		return $randResult;
+	}
+
+
 }
 ?>

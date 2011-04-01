@@ -81,8 +81,6 @@ class Tx_TlPhotoblog_Domain_Model_Article extends Tx_Extbase_DomainObject_Abstra
 	 */
 	protected $galleryimage;
 	
-	
-	
 	/**
 	 * Setter for title
 	 *

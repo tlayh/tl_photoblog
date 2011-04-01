@@ -50,21 +50,41 @@ class Tx_TlPhotoblog_Controller_ArticleController extends Tx_Extbase_MVC_Control
 		$this->categoryRepository = t3lib_div::makeInstance('Tx_TlPhotoblog_Domain_Repository_CategoryRepository');
 	}
 
-	public function indexAction() {
-		$this->view->assign('categories', $this->categoryRepository->findAll());
-		$this->view->assign('articles', $this->articleRepository->findAll());
+	/**
+	 * index action
+	 * @dontvalidate $category
+	 * @return void
+	 */
+	public function indexAction(Tx_TlPhotoblog_Domain_Model_Category $category = NULL) {
+
+		if($category != NULL) {
+			$this->view->assign('articles', $this->articleRepository->findByCategory($category));
+		} else {
+			$this->view->assign('articles', $this->articleRepository->findAll());
+			$category = new Tx_TlPhotoblog_Domain_Model_Category();
+		}
+
+		$this->view->assign('category', $category);
+
+		// convert categories to array to unshift the first element
+		$categories = $this->categoryRepository->findAll()->toArray();
+		$cat = new Tx_TlPhotoblog_Domain_Model_Category();
+		$cat->setName('Alle');
+
+		array_unshift($categories, $cat);
+
+		$this->view->assign('categories', $categories);
 	}
 
 	/**
-	 * @param Tx_TlPhotoblog_Domain_Model_Article
+	 * show action
+	 * @param Tx_TlPhotoblog_Domain_Model_Article $article
 	 * @dontvalidate $comment
 	 * @return void
 	 */
 	public function showAction(Tx_TlPhotoblog_Domain_Model_Article $article, Tx_TlPhotoblog_Domain_Model_Comment $comment = NULL) {
 		$this->view->assign('article', $article);
-
-		$this->view->assign('category', $this->articleRepository->findByCategory($article->getCategory()));
-		
+		$this->view->assign('category', $this->articleRepository->findByCategories($article->getCategory(), $article));
 		$this->view->assign('comment', $comment);
 	}
 

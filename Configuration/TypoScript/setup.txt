@@ -60,4 +60,21 @@ plugin.tx_tlphotoblog._CSS_DEFAULT_STYLE (
 		margin-right:10px;
 	}
 
+	.tx-tlphotoblog-pi1 select.category-select {
+		 border: 1px solid black;
+    	border-radius: 5px;
+    	-moz-border-radius:5px;
+    	float: right;
+    	height: 20px;
+    	margin-bottom: 10px;
+    	width: 180px;
+    	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    	-webkit-border-radius:5px;
+    	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+	}
+
+	.tx-tlphotoblog-pi1 div.photoblog-list {
+		clear:both;
+	}
+
 )

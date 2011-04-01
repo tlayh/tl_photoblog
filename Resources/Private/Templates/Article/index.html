@@ -6,7 +6,9 @@ This Template is responsible for creating a table of domain objects.
 
 <f:flashMessages />
 
-<f:form.select options="{categories}" optionLabelField="name" optionValueField="uid" />
+<f:form action="index" controller="Article" name="category" id="category" object="{category}">
+	<f:form.select value="{category}" name="category" options="{categories}" optionValueField="uid" optionLabelField="name" class="category-select" />
+</f:form>
 
 <div class="photoblog-list">
 	<ul>
