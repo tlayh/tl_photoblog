@@ -14,7 +14,7 @@ This Template is responsible for creating a table of domain objects.
 	<ul>
 	<f:for each="{articles}" as="article">
 		<li>
-		<f:link.action action="show" arguments="{article : article}">
+		<f:link.action controller="Article" action="show" arguments="{article : article}">
 			<f:image src="uploads/tx_tlphotoblog/{article.smallimage}" alt="{article.name}" width="180" height="150" class="reflect rheight30 ropacity40" />
 		</f:link.action>
 		</li>
