@@ -1,0 +1,95 @@
+input.f3-form-error {
+	background-color: #FF9F9F;
+	border: 1px #FF0000 solid;
+}
+
+textarea.f3-form-error {
+	background-color: #FF9F9F;
+	border: 1px #FF0000 solid;
+}
+
+.tx-tlphotoblog-pi1 ul.flashMessages {
+	color: #FF0000;
+}
+
+.tx-tlphotoblog-pi1 span.comment-date {
+	color: #C0C0C0;
+	font-size: 13px;
+}
+
+.tx-tlphotoblog-pi1 div.content img {
+	margin-right: 8px;
+	float: left;
+}
+
+.tx-tlphotoblog-pi1 div.content {
+	margin-bottom: 10px;
+}
+
+.tx-tlphotoblog-pi1 div.comment-form label {
+	width: 100px;
+	float: left;
+	display: block;
+}
+
+.tx-tlphotoblog-pi1 div.comment-form br {
+	clear: both;
+}
+
+.tx-tlphotoblog-pi1 div.photoblog-list ul {
+	list-style: none;
+}
+
+.tx-tlphotoblog-pi1 div.photoblog-list ul li {
+	float: left;
+	width: 205px;
+}
+
+.tx-tlphotoblog-pi1 div.content div.rheight20 {
+	float: left;
+	margin-right: 10px;
+}
+
+.tx-tlphotoblog-pi1 select.category-select {
+	border: 1px solid black;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	float: right;
+	height: 20px;
+	margin-bottom: 10px;
+	width: 180px;
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+	-webkit-border-radius: 5px;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+	margin-right: 34px;
+}
+
+.tx-tlphotoblog-pi1 div.photoblog-list {
+	clear: both;
+}
+
+.tx-tlphotoblog-pi1 div.article-navigation {
+	width: 100%;
+	display: block;
+}
+
+.tx-tlphotoblog-pi1 div.article-navigation span.previous-link {
+	float: left;
+}
+
+.tx-tlphotoblog-pi1 div.article-navigation span.next-link {
+	float: right;
+}
+
+.tx-tlphotoblog-pi1 div.article-navigation span.back-link {
+	float: left;
+	margin-left: 35%;
+}
+
+.tx-tlphotoblog-pi1 div.article-navigation button {
+	background: none repeat scroll 0 0 transparent;
+	border: 1px solid gray;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	cursor: pointer;
+}
