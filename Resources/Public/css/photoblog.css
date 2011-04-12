@@ -36,11 +36,12 @@ textarea.f3-form-error {
 	clear: both;
 }
 
-.tx-tlphotoblog-pi1 div.photoblog-list ul {
+.tx-tlphotoblog-pi1 div.photoblog-list ul.list {
 	list-style: none;
+	clear:both;
 }
 
-.tx-tlphotoblog-pi1 div.photoblog-list ul li {
+.tx-tlphotoblog-pi1 div.photoblog-list ul.list li {
 	float: left;
 	width: 205px;
 	height:200px;
@@ -93,4 +94,13 @@ textarea.f3-form-error {
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	cursor: pointer;
+}
+
+.tx-tlphotoblog-pi1 div.photoblog-list ul.f3-widget-paginator {
+	list-style: none;
+	clear:both;
+}
+
+.tx-tlphotoblog-pi1 div.photoblog-list ul.f3-widget-paginator li {
+	float:left;
 }

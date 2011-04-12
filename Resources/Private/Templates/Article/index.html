@@ -11,15 +11,19 @@ This Template is responsible for creating a table of domain objects.
 </f:form>
 
 <div class="photoblog-list">
-	<ul>
-	<f:for each="{articles}" as="article">
-		<li>
-		<f:link.action controller="Article" action="show" arguments="{article : article}">
-			<f:image src="uploads/tx_tlphotoblog/{article.smallimage}" alt="{article.name}" width="180" height="150" class="reflect rheight30 ropacity40" />
-		</f:link.action>
-		</li>
-	</f:for>
-	</ul>
+		<f:widget.paginate objects="{articles}" as="paginatedArticles" configuration="{itemsPerPage: itemsPerPage, insertAbove: paginationAbove, insertBelow: paginationBelow}">
+			<br />
+			<ul class="list">
+			<f:for each="{paginatedArticles}" as="article">
+				<li>
+				<f:link.action controller="Article" action="show" arguments="{article : article}">
+					<f:image src="uploads/tx_tlphotoblog/{article.smallimage}" alt="{article.name}" width="180" height="150" class="reflect rheight30 ropacity40" />
+				</f:link.action>
+				</li>
+			</f:for>
+			</ul>
+		<br />
+		</f:widget.paginate>
 </div>
 
 </f:section>

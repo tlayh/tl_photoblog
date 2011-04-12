@@ -43,9 +43,11 @@ class Tx_TlPhotoblog_Domain_Repository_ArticleRepository extends Tx_Extbase_Pers
 
 	/**
 	 * @param Tx_Extbase_Persistence_ObjectStorage $categories
+	 * @param Tx_TlPhotoblog_Domain_Model_Article $currentArticle
+	 * @param int $max
 	 * @return query result
 	 */
-	public function findByCategories(Tx_Extbase_Persistence_ObjectStorage $categories, Tx_TlPhotoblog_Domain_Model_Article $currentArticle) {
+	public function findByCategories(Tx_Extbase_Persistence_ObjectStorage $categories, Tx_TlPhotoblog_Domain_Model_Article $currentArticle, $max) {
 		$query = $this->createQuery();
 		foreach($categories as $cat) {
 			$query->matching($query->contains('category', $cat));
@@ -53,7 +55,6 @@ class Tx_TlPhotoblog_Domain_Repository_ArticleRepository extends Tx_Extbase_Pers
 
 		$result = $query->execute()->toArray();
 
-		$max = 3;
 		$count = count($result);
 
 		if($count > $max) {

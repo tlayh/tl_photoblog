@@ -73,6 +73,10 @@ class Tx_TlPhotoblog_Controller_ArticleController extends Tx_Extbase_MVC_Control
 
 		array_unshift($categories, $cat);
 
+		$this->view->assign('itemsPerPage', $this->settings['list']['articlePerPage']);
+		$this->view->assign('paginationAbove', $this->settings['list']['showPaginationAbove']);
+		$this->view->assign('paginationBelow', $this->settings['list']['showPaginationBelow']);
+
 		$this->view->assign('categories', $categories);
 	}
 
@@ -83,10 +87,18 @@ class Tx_TlPhotoblog_Controller_ArticleController extends Tx_Extbase_MVC_Control
 	 * @return void
 	 */
 	public function showAction(Tx_TlPhotoblog_Domain_Model_Article $article, Tx_TlPhotoblog_Domain_Model_Comment $comment = NULL) {
+
+		// get limit from settings
+		$limit = $this->settings['single']['randomArticlePerArticle'];
+		if(!is_numeric($limit) || $limit < 1) {
+			// if no limit is set, set it to default
+			$limit = 3;
+		}
+
 		$this->view->assign('article', $article);
 		$this->view->assign('next', $this->articleRepository->findNext($article));
 		$this->view->assign('previous', $this->articleRepository->findPrevious($article));
-		$this->view->assign('category', $this->articleRepository->findByCategories($article->getCategory(), $article));
+		$this->view->assign('category', $this->articleRepository->findByCategories($article->getCategory(), $article, $limit));
 		$this->view->assign('comment', $comment);
 	}
 
