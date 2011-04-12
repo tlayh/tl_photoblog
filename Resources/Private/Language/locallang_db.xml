@@ -29,5 +29,6 @@
 			<label index="tx_tlphotoblog_domain_model_galleryimage.name">Name</label>
 			<label index="tx_tlphotoblog_domain_model_galleryimage.image">Image</label>
 		</languageKey>
+
 	</data>
 </T3locallang>

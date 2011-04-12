@@ -1,5 +1,5 @@
-<h3>Add your comment</h3>
-<a href="#" onclick="showCommentForm(); return false;">Show comment form</a>
+<h3><f:translate key="comment-form-add-comment" /></h3>
+<a href="#" onclick="showCommentForm(); return false;"><f:translate key="show-comment-form" /></a>
 <br />
 <br />
 
@@ -8,20 +8,20 @@
 		<f:form.hidden name="article" value="{article}" />
 		
 		<p class="row">
-			<label>Name: *</label><f:form.textbox property="name" name="name" />
+			<label><f:translate key="comment-form-name" />: *</label><f:form.textbox property="name" name="name" />
 		</p>
 
 		<p class="row">
-			<label>Email: *</label><f:form.textbox property="email" name="email" />
-			<span class="hint">Will not be published!!</span>
+			<label><f:translate key="comment-form-email" />: *</label><f:form.textbox property="email" name="email" />
+			<span class="hint"><f:translate key="comment-form-not-published" /></span>
 		</p>
 
 		<p class="row">
-			<label>Website:</label><f:form.textbox property="website" name="website" />
+			<label><f:translate key="comment-form-website" />:</label><f:form.textbox property="website" name="website" />
 		</p>
 
 		<p class="row">
-			<label>Comment: *</label><br />
+			<label><f:translate key="comment-form-comment" />: *</label><br />
 			<f:form.textarea rows="6" cols="60" property="comment" name="comment" />
 		</p>
 		
@@ -30,7 +30,7 @@
 		</p>
 
 		<p class="row">
-			Fields marked with a * are required to publish your comment.
+			<f:translate key="comment-form-fields-required" />
 		</p>
 	</f:form>
 </div>

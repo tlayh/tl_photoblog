@@ -28,6 +28,35 @@
 			<label index="tx_tlphotoblog_domain_model_galleryimage">Galleryimage</label>
 			<label index="tx_tlphotoblog_domain_model_galleryimage.name">name</label>
 			<label index="tx_tlphotoblog_domain_model_galleryimage.image">image</label>
+			<label index="zufallsbilder-headline">Random images from this category</label>
+			<label index="previous">Previous</label>
+			<label index="overview">Overview</label>
+			<label index="next">Next</label>
+			<label index="recent-comments">Recent comments</label>
+			<label index="show-comment-form">Show comment form</label>
+			<label index="comment-form-name">Name</label>
+			<label index="comment-form-email">Email</label>
+			<label index="comment-form-comment">Comment</label>
+			<label index="comment-form-not-published">Your Email will not be published.</label>
+			<label index="comment-form-fields-required">Fields marked with a * are required</label>
+			<label index="comment-form-add-comment">Add your comment</label>
+			<label index="comment-form-website">Website</label>
+		</languageKey>
+
+		<languageKey index="de" type="array">
+			<label index="zufallsbilder-headline">Zufallsbilder aus der Kategorie</label>
+			<label index="previous">Zurück</label>
+			<label index="overview">Übersicht</label>
+			<label index="next">Weiter</label>
+			<label index="recent-comments">Bisherige Kommentare</label>
+			<label index="show-comment-form">Kommentarformular anzeigen</label>
+			<label index="comment-form-name">Name</label>
+			<label index="comment-form-email">Email</label>
+			<label index="comment-form-comment">Kommentar</label>
+			<label index="comment-form-not-published">Deine Emailadresse wird nicht angezeigt.</label>
+			<label index="comment-form-fields-required">Felder mit einem * sind Pflichtfelder</label>
+			<label index="comment-form-add-comment">Kommentar hinzufügen</label>
+			<label index="comment-form-website">Website</label>
 		</languageKey>
 	</data>
 </T3locallang>

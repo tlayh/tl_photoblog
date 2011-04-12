@@ -1,6 +1,6 @@
 {namespace tl=Tx_TlPhotoblog_ViewHelpers}
 
-<h3>Recent comments:</h3>
+<h3><f:translate key="recent-comments" />:</h3>
 
 	<f:for each="{comments}" as="comment">
 		<span class="comment-date"><f:format.date format="d-m-Y - H:i">{comment.crdate}</f:format.date></span><br />

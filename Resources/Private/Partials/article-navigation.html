@@ -2,21 +2,21 @@
 	<f:if condition="{previous}">
 		<f:link.action action="show" arguments="{article : previous}">
 				<span class="previous-link">
-					<button>Previous</button>
+					<button><f:translate key="previous" /></button>
 				</span>
 		</f:link.action>
 	</f:if>
 
 	<f:link.action action="index">
 			<span class="back-link">
-				<button>&Uuml;bersicht</button>
+				<button><f:translate key="overview" /></button>
 			</span>
 	</f:link.action>
 
 	<f:if condition="{next}">
 		<f:link.action action="show" arguments="{article : next}">
 				<span class="next-link">
-					<button>Next</button>
+					<button><f:translate key="next" /></button>
 				</span>
 		</f:link.action>
 	</f:if>
