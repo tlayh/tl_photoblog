@@ -95,14 +95,17 @@ class Tx_TlPhotoblog_Controller_ArticleController extends Tx_Extbase_MVC_Control
 			$limit = 3;
 		}
 
-		$exifData = array();
-		$filename = $article->getImage();
-		$filename = 'uploads/tx_tlphotoblog/'.$filename;
-		$exif = t3lib_div::makeInstance('Tx_TlPhotoblog_System_ExifData');
-		$exifData = $exif->getExifData($filename);
+		if($this->settings['single']['showCameraInformation'] == 1) {
+			$exifData = array();
+			$filename = $article->getImage();
+			$filename = 'uploads/tx_tlphotoblog/'.$filename;
+			$exif = t3lib_div::makeInstance('Tx_TlPhotoblog_System_ExifData');
+			$exifData = $exif->getExifData($filename);
+			$this->view->assign('exifData', $exifData);
+		}
 
 		$this->view->assign('article', $article);
-		$this->view->assign('exifData', $exifData);
+
 		$this->view->assign('next', $this->articleRepository->findNext($article));
 		$this->view->assign('previous', $this->articleRepository->findPrevious($article));
 		$this->view->assign('category', $this->articleRepository->findByCategories($article->getCategory(), $article, $limit));

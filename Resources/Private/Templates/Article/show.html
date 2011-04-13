@@ -12,18 +12,21 @@ This Template is responsible for creating a single view for a domain object
 
 	<h1>{article.title}</h1>
 
-	<div class="camera-information">
-		<div class="headline">
-			<h4><f:translate key="camera-information" /></h4>
+	<f:if condition="{settings.single.showCameraInformation}">
+		<div class="camera-information">
+			<div class="headline">
+				<h4><f:translate key="camera-information" /></h4>
+			</div>
+
+			<div class="information">
+				<p>
+					<f:translate key="camera" />: {exifData.Model}<br />
+					<f:translate key="exposure" />: {exifData.ExposureTime}<br />
+					<f:translate key="aperture" />: {exifData.COMPUTED.ApertureFNumber}
+				</p>
+			</div>
 		</div>
-		<div class="information">
-			<p>
-				<f:translate key="camera" />: {exifData.Model}<br />
-				<f:translate key="exposure" />: {exifData.ExposureTime}<br />
-				<f:translate key="aperture" />: {exifData.COMPUTED.ApertureFNumber}
-			</p>
-		</div>
-	</div>
+	</f:if>
 
 	<div class="content">
 
