@@ -32,6 +32,9 @@
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
 
+/**
+ * @deprecated This controller is currently not in use
+ */
 class Tx_TlPhotoblog_Controller_CategoryController extends Tx_Extbase_MVC_Controller_ActionController {
 	
 
