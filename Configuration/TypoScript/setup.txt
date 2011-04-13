@@ -18,6 +18,7 @@ plugin.tx_tlphotoblog.settings {
 
 	# display pagination above the list view
 	list.showPaginationAbove = 1
+
 	#display pagination below the list view
 	list.showPaginationBelow = 1
 
@@ -26,11 +27,15 @@ plugin.tx_tlphotoblog.settings {
 
 	# display article navigation above the article
 	single.showNavigationAbove = 1
+	
 	# display the article navigation below the article
 	single.showNavigationBelow = 1
 
 	# display the camera information for the photo
 	single.showCameraInformation = 1
+
+	# show gallery instead of random images
+	single.showGalleryInsteadOfRandomImages = 0
 
 	# includes the css and js jquery and jquery lightbox and jquery lightbox css
 	includeJSLibsfromExtension = 0
