@@ -22,4 +22,8 @@ plugin.tx_tlphotoblog.settings {
 	single.showNavigationBelow = 1
 
 	single.showCameraInformation = 1
+
+	includeJSLibsfromExtension = 0
+
+	useReflectionJs = 1
 }
