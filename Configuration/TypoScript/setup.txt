@@ -37,14 +37,11 @@ plugin.tx_tlphotoblog.settings {
 	# show gallery instead of random images
 	single.showGalleryInsteadOfRandomImages = 0
 
-	# includes the css and js jquery and jquery lightbox and jquery lightbox css
-	includeJSLibsfromExtension = 0
-
 	# currently not yet use
 	useReflectionJs = 1
 }
 
-[globalVar = plugin.tx_tlphotoblog.settings.includeJSLibsfromExtension = 1]
+[globalVar = LIT:1 = {$plugin.tx_tlphotoblog.settings.includeJSLibsfromExtension}]
 	page.includeCSS {
 		lightboxCSS = typo3conf/ext/tl_photoblog/Resources/Public/css/jquery.lightbox-0.5.css
 	}

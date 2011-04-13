@@ -1,0 +1,2 @@
+# includeJSLibsfromExtension
+plugin.tx_tlphotoblog.settings.includeJSLibsfromExtension = 0
