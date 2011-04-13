@@ -16,4 +16,7 @@ plugin.tx_tlphotoblog.settings {
 	list.showPaginationAbove = 1
 	list.showPaginationBelow = 1
 	single.randomArticlePerArticle = 3
+
+	single.showNavigationAbove = 1
+	single.showNavigationBelow = 1
 }
