@@ -6,12 +6,24 @@ This Template is responsible for creating a single view for a domain object
 
 <f:section name="main">
 
-	<f:render partial="article-navigation" arguments="{next:next, previous:previous}" />
-
+	<f:if condition="{settings.single.showNavigationAbove}">
+		<f:render partial="article-navigation" arguments="{next:next, previous:previous}" />
+	</f:if>
 
 	<h1>{article.title}</h1>
 
-	<h4>ExifData</h4>
+	<div class="camera-information">
+		<div class="headline">
+			<h4><f:translate key="camera-information" /></h4>
+		</div>
+		<div class="information">
+			<p>
+				<f:translate key="camera" />: {exifData.Model}<br />
+				<f:translate key="exposure" />: {exifData.ExposureTime}<br />
+				<f:translate key="aperture" />: {exifData.COMPUTED.ApertureFNumber}
+			</p>
+		</div>
+	</div>
 
 	<div class="content">
 
@@ -25,13 +37,15 @@ This Template is responsible for creating a single view for a domain object
 
 	<br style="clear:both;" />
 
-	<f:render partial="article-navigation" arguments="{next:next, previous:previous}" />
+	<f:if condition="{settings.single.showNavigationAbove}">
+		<f:render partial="article-navigation" arguments="{next:next, previous:previous}" />
+	</f:if>
 
 	<br style="clear:both; margin-top:20px;"/>
 
 	<div class="photoblog-list">
 		<h2><f:translate key="zufallsbilder-headline" />:</h2>
-		<ul>
+		<ul class="list">
 			<f:for each="{category}" as="art">
 				<li>
 					<f:link.action action="show" arguments="{article : art}">
