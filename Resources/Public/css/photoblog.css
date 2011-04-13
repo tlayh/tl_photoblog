@@ -104,3 +104,16 @@ textarea.f3-form-error {
 .tx-tlphotoblog-pi1 div.photoblog-list ul.f3-widget-paginator li {
 	float:left;
 }
+
+.tx-tlphotoblog-pi1 div.camera-information {
+	display:block;
+}
+
+.tx-tlphotoblog-pi1 div.camera-information div.headline {
+	width:200px;
+	float:left;
+}
+
+.tx-tlphotoblog-pi1 div.camera-information div.information {
+	font-size:11px;
+}
