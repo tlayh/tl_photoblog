@@ -38,7 +38,7 @@ plugin.tx_tlphotoblog.settings {
 	single.showGalleryInsteadOfRandomImages = 0
 
 	# currently not yet use
-	useReflectionJs = 1
+	useReflectionJs = {$plugin.tx_tlphotoblog.settings.useReflectionJs}
 }
 
 [globalVar = LIT:1 = {$plugin.tx_tlphotoblog.settings.includeJSLibsfromExtension}]
@@ -49,4 +49,10 @@ plugin.tx_tlphotoblog.settings {
 		photoblogJquery = typo3conf/ext/tl_photoblog/Resources/Public/Js/jquery.min.js
 		photobloJqueryLightbox = typo3conf/ext/tl_photoblog/Resources/Public/Js/jquery.lightbox-0.5.min.js
 	}
+[end]
+
+[globalVar = LIT:1 = {$plugin.tx_tlphotoblog.settings.useReflectionJs}]
+page.includeJS {
+	reflection = typo3conf/ext/tl_photoblog/Resources/Public/Js/reflection.js
+}
 [end]

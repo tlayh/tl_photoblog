@@ -1,2 +1,5 @@
 # includeJSLibsfromExtension
 plugin.tx_tlphotoblog.settings.includeJSLibsfromExtension = 0
+
+#use reflection js
+plugin.tx_tlphotoblog.settings.useReflectionJs = 1
