@@ -12,18 +12,39 @@ page.includeCSS {
 # show all available settings here
 #
 plugin.tx_tlphotoblog.settings {
+
+	# for pagination, how many items to display on the list view
 	list.articlePerPage = 9
+
+	# display pagination above the list view
 	list.showPaginationAbove = 1
+	#display pagination below the list view
 	list.showPaginationBelow = 1
 
+	# how many articles to display below the article from the same category
 	single.randomArticlePerArticle = 3
 
+	# display article navigation above the article
 	single.showNavigationAbove = 1
+	# display the article navigation below the article
 	single.showNavigationBelow = 1
 
+	# display the camera information for the photo
 	single.showCameraInformation = 1
 
+	# includes the css and js jquery and jquery lightbox and jquery lightbox css
 	includeJSLibsfromExtension = 0
 
+	# currently not yet use
 	useReflectionJs = 1
 }
+
+[globalVar = plugin.tx_tlphotoblog.settings.includeJSLibsfromExtension = 1]
+	page.includeCSS {
+		lightboxCSS = typo3conf/ext/tl_photoblog/Resources/Public/css/jquery.lightbox-0.5.css
+	}
+	page.includeJS {
+		photoblogJquery = typo3conf/ext/tl_photoblog/Resources/Public/Js/jquery.min.js
+		photobloJqueryLightbox = typo3conf/ext/tl_photoblog/Resources/Public/Js/jquery.lightbox-0.5.min.js
+	}
+[end]
