@@ -57,6 +57,11 @@ class Tx_TlPhotoblog_Controller_ArticleController extends Tx_Extbase_MVC_Control
 	 */
 	public function indexAction(Tx_TlPhotoblog_Domain_Model_Category $category = NULL) {
 
+		if(isset($this->settings['flexform']['category'])) {
+			$categoryId = $this->settings['flexform']['category'];
+			$category = $this->categoryRepository->findByUid($categoryId);
+		}
+
 		if($category != NULL) {
 			$this->view->assign('articles', $this->articleRepository->findByCategory($category));
 		} else {
@@ -105,6 +110,10 @@ class Tx_TlPhotoblog_Controller_ArticleController extends Tx_Extbase_MVC_Control
 		}
 
 		$this->view->assign('article', $article);
+
+		// check for selection of settings.flexform.singleViewAddon
+		$singleViewAddon = $this->settings['flexform']['singleViewAddon'];
+		$this->view->assign('singleViewAddon', $singleViewAddon);
 
 		$this->view->assign('next', $this->articleRepository->findNext($article));
 		$this->view->assign('previous', $this->articleRepository->findPrevious($article));
