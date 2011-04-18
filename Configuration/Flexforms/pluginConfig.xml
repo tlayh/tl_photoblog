@@ -1,0 +1,49 @@
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<main>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:tl_photoblog/Resources/Private/Language/locallang_db.xml:pi_flexform.sheet_main
+					</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<settings.flexform.category>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:tl_photoblog/Resources/Private/Language/locallang_db.xml:pi_flexform.category
+							</label>
+							<config>
+								<type>select</type>
+								<size>1</size>
+								<foreign_table>tx_tlphotoblog_domain_model_category</foreign_table>
+							</config>
+						</TCEforms>
+					</settings.flexform.category>
+					<settings.flexform.singleViewAddon>
+						<TCEforms>
+							<label>Controller selection</label>
+							<onChange>reload</onChange>
+							<config>
+								<type>select</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">Random image from current category</numIndex>
+										<numIndex index="1">0</numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">Galleryimages</numIndex>
+										<numIndex index="1">1</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.flexform.singleViewAddon>
+				</el>
+			</ROOT>
+		</main>
+	</sheets>
+</T3DataStructure>
