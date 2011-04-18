@@ -12,6 +12,10 @@ jQuery(document).ready(function () {
 			jQuery('#category').submit();
 		});
 	}
+
+	if(jQuery('div.tx-tlphotoblog-pi1 div.gallery a')) {
+		jQuery('div.tx-tlphotoblog-pi1 div.gallery a').lightBox();
+	}
 	
 });
 

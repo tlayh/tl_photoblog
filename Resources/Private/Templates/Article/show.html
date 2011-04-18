@@ -46,19 +46,32 @@ This Template is responsible for creating a single view for a domain object
 
 	<br style="clear:both; margin-top:20px;"/>
 
-	<div class="photoblog-list">
-		<h2><f:translate key="zufallsbilder-headline" />:</h2>
-		<ul class="list">
-			<f:for each="{category}" as="art">
-				<li>
-					<f:link.action action="show" arguments="{article : art}">
-						<f:image src="uploads/tx_tlphotoblog/{art.smallimage}" alt="{art.name}" width="180"
-								 height="150" class="reflect ropacity30 rheight20" />
-					</f:link.action>
-				</li>
-			</f:for>
-		</ul>
-	</div>
+
+	<f:if condition="singleViewAddon">
+		<f:then>
+			<div class="gallery">
+				<f:for each="{article.galleryimage}" as="gallery">
+					<h3>{gallery.name}</h3>
+					<tl:gallery value="{gallery.image}" />
+				</f:for>
+			</div>
+		</f:then>
+		<f:else>
+			<div class="photoblog-list">
+			<h2><f:translate key="zufallsbilder-headline" />:</h2>
+				<ul class="list">
+					<f:for each="{category}" as="art">
+						<li>
+							<f:link.action action="show" arguments="{article : art}">
+								<f:image src="uploads/tx_tlphotoblog/{art.smallimage}" alt="{art.name}" width="180"
+										 height="150" class="reflect ropacity30 rheight20" />
+							</f:link.action>
+						</li>
+					</f:for>
+				</ul>
+			</div>
+		</f:else>
+	</f:if>
 
 	<f:flashMessages class="flashMessages"/>
 
