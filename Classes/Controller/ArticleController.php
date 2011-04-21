@@ -115,8 +115,15 @@ class Tx_TlPhotoblog_Controller_ArticleController extends Tx_Extbase_MVC_Control
 		$singleViewAddon = $this->settings['flexform']['singleViewAddon'];
 		$this->view->assign('singleViewAddon', $singleViewAddon);
 
-		$this->view->assign('next', $this->articleRepository->findNext($article));
-		$this->view->assign('previous', $this->articleRepository->findPrevious($article));
+		// get category for next/previous function
+		$category = NULL;
+		if(isset($this->settings['flexform']['category'])) {
+			$categoryId = $this->settings['flexform']['category'];
+			$category = $this->categoryRepository->findByUid($categoryId);
+		}
+
+		$this->view->assign('next', $this->articleRepository->findNext($article, $category));
+		$this->view->assign('previous', $this->articleRepository->findPrevious($article, $category));
 		$this->view->assign('category', $this->articleRepository->findByCategories($article->getCategory(), $article, $limit));
 		$this->view->assign('comment', $comment);
 	}

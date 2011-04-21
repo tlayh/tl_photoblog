@@ -75,9 +75,17 @@ class Tx_TlPhotoblog_Domain_Repository_ArticleRepository extends Tx_Extbase_Pers
 	 * @param Tx_TlPhotoblog_Domain_Model_Article $article
 	 * @return Tx_TlPhotoblog_Domain_Model_Article
 	 */
-	public function findPrevious(Tx_TlPhotoblog_Domain_Model_Article $article) {
+	public function findPrevious(Tx_TlPhotoblog_Domain_Model_Article $article, Tx_TlPhotoblog_Domain_Model_Category $category) {
 		$query = $this->createQuery();
-		$query->matching ($query->lessThan('uid', $article->getUid()));
+
+		// build constraint array
+		$constraint = array();
+		$constraint[] = $query->lessThan('uid', $article->getUid());
+		if($category != null) {
+			$constraint[] = $query->contains('category', $category);
+		}
+		$query->matching($query->logicalAnd($constraint));
+
 		$query->setOrderings(array('uid' => Tx_Extbase_Persistence_QueryInterface::ORDER_DESCENDING));
 		return $query->execute()->getFirst();
 	}
@@ -88,9 +96,17 @@ class Tx_TlPhotoblog_Domain_Repository_ArticleRepository extends Tx_Extbase_Pers
 	 * @param Tx_TlPhotoblog_Domain_Model_Article $article
 	 * @return Tx_TlPhotoblog_Domain_Model_Article
 	 */
-	public function findNext(Tx_TlPhotoblog_Domain_Model_Article $article) {
+	public function findNext(Tx_TlPhotoblog_Domain_Model_Article $article, Tx_TlPhotoblog_Domain_Model_Category $category) {
 		$query = $this->createQuery();
-		$query->matching ($query->greaterThan('uid', $article->getUid()));
+
+		// build constraint array
+		$constraint = array();
+		$constraint[] = $query->greaterThan('uid', $article->getUid());
+		if($category != null) {
+			$constraint[] = $query->contains('category', $category);
+		}
+		$query->matching($query->logicalAnd($constraint));
+		
 		$query->setOrderings(array('uid' => Tx_Extbase_Persistence_QueryInterface::ORDER_ASCENDING));
 		return $query->execute()->getFirst();
 	}

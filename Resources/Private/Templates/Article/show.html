@@ -30,8 +30,8 @@ This Template is responsible for creating a single view for a domain object
 
 	<div class="content">
 
-		<a href="uploads/tx_tlphotoblog/{article.image}">
-			<f:image src="uploads/tx_tlphotoblog/{article.image}" alt="{article.name}" maxWidth="400" class="reflect ropacity30 rheight20" />
+		<a href="uploads/tx_tlphotoblog/{article.image}" title="{article.name}">
+			<f:image src="uploads/tx_tlphotoblog/{article.image}" title="{article.name}" alt="{article.name}" maxWidth="400" class="reflect ropacity30 rheight20" />
 		</a>
 
 		<f:format.html>{article.text}</f:format.html>
@@ -46,8 +46,7 @@ This Template is responsible for creating a single view for a domain object
 
 	<br style="clear:both; margin-top:20px;"/>
 
-
-	<f:if condition="singleViewAddon">
+	<f:if condition="{singleViewAddon}">
 		<f:then>
 			<div class="gallery">
 				<f:for each="{article.galleryimage}" as="gallery">
@@ -72,6 +71,8 @@ This Template is responsible for creating a single view for a domain object
 			</div>
 		</f:else>
 	</f:if>
+
+	<br style="clear:both; margin-top:20px;"/>
 
 	<f:flashMessages class="flashMessages"/>
 
