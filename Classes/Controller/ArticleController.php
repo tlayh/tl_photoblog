@@ -57,7 +57,7 @@ class Tx_TlPhotoblog_Controller_ArticleController extends Tx_Extbase_MVC_Control
 	 */
 	public function indexAction(Tx_TlPhotoblog_Domain_Model_Category $category = NULL) {
 
-		if(isset($this->settings['flexform']['category'])) {
+		if(isset($this->settings['flexform']['category']) && $this->settings['list']['ignoreCategorySetting'] != 1) {
 			$categoryId = $this->settings['flexform']['category'];
 			$category = $this->categoryRepository->findByUid($categoryId);
 		}
@@ -117,7 +117,7 @@ class Tx_TlPhotoblog_Controller_ArticleController extends Tx_Extbase_MVC_Control
 
 		// get category for next/previous function
 		$category = NULL;
-		if(isset($this->settings['flexform']['category'])) {
+		if(isset($this->settings['flexform']['category']) && $this->settings['list']['ignoreCategorySetting'] != 1) {
 			$categoryId = $this->settings['flexform']['category'];
 			$category = $this->categoryRepository->findByUid($categoryId);
 		}

@@ -25,6 +25,9 @@ plugin.tx_tlphotoblog.settings {
 	# display the select box for the list view
 	list.showSelectBoxCategory = 0
 
+	# ignore the category setting for the list view
+	list.ignoreCategorySetting = 0
+
 	# how many articles to display below the article from the same category
 	single.randomArticlePerArticle = 3
 

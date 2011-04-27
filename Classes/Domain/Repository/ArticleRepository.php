@@ -75,7 +75,7 @@ class Tx_TlPhotoblog_Domain_Repository_ArticleRepository extends Tx_Extbase_Pers
 	 * @param Tx_TlPhotoblog_Domain_Model_Article $article
 	 * @return Tx_TlPhotoblog_Domain_Model_Article
 	 */
-	public function findPrevious(Tx_TlPhotoblog_Domain_Model_Article $article, Tx_TlPhotoblog_Domain_Model_Category $category) {
+	public function findPrevious(Tx_TlPhotoblog_Domain_Model_Article $article, Tx_TlPhotoblog_Domain_Model_Category $category = null) {
 		$query = $this->createQuery();
 
 		// build constraint array
@@ -96,7 +96,7 @@ class Tx_TlPhotoblog_Domain_Repository_ArticleRepository extends Tx_Extbase_Pers
 	 * @param Tx_TlPhotoblog_Domain_Model_Article $article
 	 * @return Tx_TlPhotoblog_Domain_Model_Article
 	 */
-	public function findNext(Tx_TlPhotoblog_Domain_Model_Article $article, Tx_TlPhotoblog_Domain_Model_Category $category) {
+	public function findNext(Tx_TlPhotoblog_Domain_Model_Article $article, Tx_TlPhotoblog_Domain_Model_Category $category = null) {
 		$query = $this->createQuery();
 
 		// build constraint array
