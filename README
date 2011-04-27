@@ -2,4 +2,6 @@ tl_photoblog
 
 Small Photoblog extension for TYPO3 based on extbase/fluid
 
-Author: Thomas Layh.
+Author: Thomas Layh <thomas@layh.com>
+
+Plugin hosted on: https://github.com/tlayh/tl_photoblog
